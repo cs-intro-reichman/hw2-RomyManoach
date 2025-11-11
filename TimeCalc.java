@@ -10,30 +10,20 @@ public class TimeCalc {
         int hours = (int)((firstHour *10) + secondHour);
         int minutes = (int)((firstMinute * 10) + secondMinute);
        
-        if (min2add > 60){
-            minutes = minutes + (min2add % 60);
-        }
-        else {
-            minutes = minutes + min2add;
-        }
-        
-        if (minutes > 60){
-            minutes = minutes % 60;
-            hours = (hours+(min2add/60));
-        }
-        if (minutes == 60){
-            minutes = 00;
-            hours++;
-        }
-        
-       if (hours > 24){
+        minutes += min2add % 60;
+        hours += min2add / 60;
+        hours += minutes / 60;
+        minutes = minutes % 60;
         hours = hours % 24;
-       }
-       if (minutes >= 10){
-        System.out.println(hours + ":" + minutes);
-       }
-       if (minutes < 10){
-        System.out.println(hours + ":0" + minutes);
-       }
+ 
+        if (hours <10){
+            System.out.print("0");
+        }
+        System.out.print(hours + ":");
+
+        if (minutes <10){
+            System.out.print("0");
+        }
+        System.out.print(minutes);
     }
 }

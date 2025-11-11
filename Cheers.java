@@ -1,6 +1,7 @@
 public class Cheers {
         public static void main(String[] args) {
-        String word = args[0];
+        String small = args[0];
+        String word = small.toUpperCase();
         int times = Integer.parseInt(args[1]);
 
             for (int i = 0; i < word.length(); i++){
@@ -9,7 +10,7 @@ public class Cheers {
                 // check if an/a 
                 if (word.charAt(i) == 'A' || word.charAt(i) == 'E' || word.charAt(i) == 'F' || 
                         word.charAt(i) == 'H' || word.charAt(i) == 'I' || word.charAt(i) == 'L' || 
-                        word.charAt(i) == 'M' || word.charAt(i) == 'O' || word.charAt(i) == 'R') {
+                        word.charAt(i) == 'M' || word.charAt(i) == 'O' || word.charAt(i) == 'R' || word.charAt(i) == 'S') {
                         System.out.println("n " + word.charAt(i) + ": " + word.charAt(i) + "!");
                 }
                 else {
@@ -19,7 +20,7 @@ public class Cheers {
             System.out.println("What does that spell?");
 
              for (int i = 0; i < times; i++){
-                System.out.println(word + " !!!");
+                System.out.println(word + "!!!");
              }
             
         }
